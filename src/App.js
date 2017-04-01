@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import store from "./data/observableToDoStore";
-import observableStore from "./data/observableToDoStore";
-import TodoList from "./components/TodoList";
+import books from './data/Books';
+import {observer} from 'mobx-react';
 
+@observer
 class App extends Component {
   render() {
     return (
@@ -13,10 +13,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-          <div className="App-intro">
-              <TodoList store={store}/>
-          </div>
-
+        <h1>{books.someInfo}</h1>
       </div>
     );
   }
